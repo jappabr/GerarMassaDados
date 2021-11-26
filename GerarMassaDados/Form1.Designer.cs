@@ -119,7 +119,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(488, 34);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(112, 20);
             this.textBox3.TabIndex = 6;
             // 
             // textBox4
@@ -169,16 +169,16 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 340);
+            this.dataGridView1.Location = new System.Drawing.Point(705, 32);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(657, 137);
+            this.dataGridView1.Size = new System.Drawing.Size(502, 455);
             this.dataGridView1.TabIndex = 15;
             // 
             // richTextBox4
             // 
-            this.richTextBox4.Location = new System.Drawing.Point(717, 34);
+            this.richTextBox4.Location = new System.Drawing.Point(12, 332);
             this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(490, 443);
+            this.richTextBox4.Size = new System.Drawing.Size(669, 155);
             this.richTextBox4.TabIndex = 16;
             this.richTextBox4.Text = "";
             // 
@@ -186,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1219, 489);
+            this.ClientSize = new System.Drawing.Size(1219, 508);
             this.Controls.Add(this.richTextBox4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
@@ -204,7 +204,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Gerador de massa de dados";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
