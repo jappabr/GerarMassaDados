@@ -77,7 +77,7 @@ namespace GerarMassaDados
                 dao.PreencheTabela(dataGridView1);
                 MessageBox.Show("Banco de Dados conectado");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Conexão não estabelecida, feche o programa e verifique o erro", "ATENÇÃO");
                 MessageBox.Show(ex.ToString());
@@ -102,29 +102,18 @@ namespace GerarMassaDados
                 //nome completo
                 string nomeCompleto = nome + " " + sobrenome + " " + sobrenome2;
 
-                //Gerar endereço aleatorio 
-                int linha4 = rnd.Next(0, richTextBox1.Lines.Length);
-                nome = richTextBox1.Lines[linha4];
-                int linha5 = rnd.Next(0, richTextBox2.Lines.Length);
-                sobrenome = richTextBox2.Lines[linha5];
-                string endereco = "Rua " + nome + " " + sobrenome + ", " + rnd.Next(10, 2500);
+                //gerar valor aleatório
 
-                //gerar cpf aleatório
-                //formato para o CPF 999.999.999-99
+                string valor = rnd.Next(0, 150000).ToString();
 
-                string cpf = rnd.Next(100, 1000).ToString() + "." + rnd.Next(100, 1000).ToString() +
-                    "." + rnd.Next(100, 1000).ToString();
-
-                // gerar um telefone aleatório
-                // formato para o telefone 99-99999-9999
-
-                string telefone = rnd.Next(10, 100).ToString() + "-" + rnd.Next(2000, 100000).ToString() +
-                    "-" + rnd.Next(1000, 100000).ToString() ;
+                string[] produto = new string[] {"arroz", "feijão", "macarrão", "batata", "atum", "alface", "pão", "margarina", "adoçante", "tomate"};
+                int posicao = rnd.Next(produto.Length);
+                string produtos = produto[posicao];
 
                 //inserir no BD
-                dao.Insere(nomeCompleto, endereco, telefone, cpf);
-            
-                string dados = nomeCompleto + " " + endereco + " " + cpf + " " + telefone;
+                dao.Insere(nomeCompleto, valor, produtos);
+
+                string dados = nomeCompleto + "_" + valor + "_" + produtos;
 
                 if (richTextBox4.Text == "")
                     richTextBox4.Text += dados;
@@ -136,6 +125,31 @@ namespace GerarMassaDados
             richTextBox4.SaveFile("nomeCompleto.txt", RichTextBoxStreamType.PlainText);
 
             dao.PreencheTabela(dataGridView1);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            melhorCliente();
+        }
+        void melhorCliente()
+        {
+            string[] cliente = System.IO.File.ReadAllLines("nomeCompleto.txt");
+
+            string[] maiorValor = new string[] {"", "0", ""};
+
+            for (int i = 0; i < cliente.Length; i++){ 
+                string[] split = cliente[i].Split('_');
+                int numCliente = int.Parse(split[1]);
+
+                if (numCliente > int.Parse(maiorValor[1])){
+                    maiorValor = split;
+                }
+            }
+            string flinstons = maiorValor[0] + " " + maiorValor[1] + " " + maiorValor[2];
+
+            richTextBox5.Text += flinstons + "\n";
+            richTextBox5.SaveFile("melhorCliente.txt", RichTextBoxStreamType.PlainText);
+
         }
     }
 }
