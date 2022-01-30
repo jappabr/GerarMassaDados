@@ -44,6 +44,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,11 +184,31 @@
             this.richTextBox4.TabIndex = 16;
             this.richTextBox4.Text = "";
             // 
+            // richTextBox5
+            // 
+            this.richTextBox5.Location = new System.Drawing.Point(1236, 34);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.Size = new System.Drawing.Size(218, 307);
+            this.richTextBox5.TabIndex = 17;
+            this.richTextBox5.Text = "";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(1236, 365);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(218, 23);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "Melhor Cliente";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1219, 508);
+            this.ClientSize = new System.Drawing.Size(1466, 525);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.richTextBox5);
             this.Controls.Add(this.richTextBox4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
@@ -230,6 +252,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.RichTextBox richTextBox5;
+        private System.Windows.Forms.Button button5;
     }
 }
 
