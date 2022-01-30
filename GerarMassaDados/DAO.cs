@@ -11,9 +11,8 @@ namespace GerarMassaDados
     public class Campos{
         public int id;
         public string nome;
-        public string endereco;
-        public string telefone;
-        public string cpf;
+        public string valor;
+        public string produto;
     }
 
     public class DAO
@@ -64,16 +63,15 @@ namespace GerarMassaDados
 
         }
 
-        public void Insere(string campoNome, string campoEndereco, string campoTelefone, string campoCPF)
+        public void Insere(string campoNome, string campoValor, string campoProduto)
         {
             Abrir();
 
-            MySqlCommand comando = new MySqlCommand("insert into " + tabela + "(nome, endereco, telefone, cpf) values (@nome, @endereco, @telefone, @cpf)", minhaConexao);
+            MySqlCommand comando = new MySqlCommand("insert into " + tabela + "(nome, valor, produto) values (@nome, @valor, @produto)", minhaConexao);
 
             comando.Parameters.AddWithValue("@nome", campoNome);
-            comando.Parameters.AddWithValue("@endereco", campoEndereco);
-            comando.Parameters.AddWithValue("@telefone", campoTelefone);
-            comando.Parameters.AddWithValue("@cpf", campoCPF);
+            comando.Parameters.AddWithValue("@valor", campoValor);
+            comando.Parameters.AddWithValue("@produto", campoProduto);
             comando.ExecuteNonQuery();
 
             Fechar();
